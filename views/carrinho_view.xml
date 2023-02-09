@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="carrinho_view" model="ir.ui.view">
+        <field name="name">Carrinho view</field>
+        <field name="model">carrinho</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="cotacao_id"/>
+                <field name="pode_comprar"/>
+                <field name="etq_insuficiente"/>
+                <field name="quantidade_requisitada"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="carrinho_form" model="ir.ui.view">
+        <field name="name">Carrinho form</field>
+        <field name="model">carrinho</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="product_id" readonly="1"/>
+                        <field name="cotacao_id" readonly="1"/>
+                        <field name="pode_comprar" readonly="1"/>
+                        <field name="etq_insuficiente" readonly="1"/>
+                        <field name="quantidade_requisitada" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="carrinho_action" model="ir.actions.act_window">
+        <field name="name">Carrinho action</field>
+        <field name="res_model">carrinho</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="carrinho_root_menu" name="Carrinho" action="carrinho_action"
+              parent="sale.sale_order_menu"/>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="concorrente_view" model="ir.ui.view">
+        <field name="name">concorrente view</field>
+        <field name="model">concorrente</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="concorrente_id"/>
+                <field name="valor_produto"/>
+                <field name="product_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="concorrente_form" model="ir.ui.view">
+        <field name="name">concorrente form</field>
+        <field name="model">concorrente</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="concorrente_id"/>
+                        <field name="valor_produto"/>
+                        <field name="product_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="concorrente_action" model="ir.actions.act_window">
+        <field name="name">concorrente action</field>
+        <field name="res_model">concorrente</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="concorrente_root_menu" name="Concorrente" action="concorrente_action"
+              parent="sale.sale_order_menu"/>
+</odoo>
